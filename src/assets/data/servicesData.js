@@ -1,0 +1,75 @@
+export const services = [
+    {
+      id: 1,
+      title: "Tratamento Facial",
+      description: "Cuide da sua pele com tratamentos exclusivos e inovadores.",
+      image: "https://placehold.co/300",
+    },
+    {
+      id: 2,
+      title: "Massagem Relaxante",
+      description: "Alivie o estresse e relaxe com nossas massagens terapêuticas.",
+      image: "https://placehold.co/300",
+    },
+    {
+      id: 3,
+      title: "Depilação a Laser",
+      description: "Procedimento seguro e eficaz para uma pele lisinha.",
+      image: "https://placehold.co/300",
+    },
+    {
+      id: 4,
+      title: "Limpeza de Pele",
+      description: "Elimine impurezas e renove sua pele com nossos tratamentos.",
+      image: "https://placehold.co/300",
+    },
+    {
+      id: 5,
+      title: "Hidratação Capilar",
+      description: "Deixe seu cabelo mais saudável e hidratado.",
+      image: "https://placehold.co/300",
+    },
+    {
+      id: 6,
+      title: "Esfoliação Corporal",
+      description: "Revitalize sua pele com esfoliações profundas e suaves.",
+      image: "https://placehold.co/300",
+    },
+    {
+      id: 7,
+      title: "Bronzeamento Artificial",
+      description: "Fique com um bronzeado natural e seguro em poucas sessões.",
+      image: "https://placehold.co/300",
+    },
+    {
+      id: 8,
+      title: "Drenagem Linfática",
+      description: "Melhore a circulação e reduza o inchaço com essa técnica.",
+      image: "https://placehold.co/300",
+    },
+    {
+      id: 9,
+      title: "Spa para Pés e Mãos",
+      description: "Tratamentos especiais para deixar pés e mãos impecáveis.",
+      image: "https://placehold.co/300",
+    },
+    {
+      id: 10,
+      title: "Acupuntura Estética",
+      description: "Rejuvenesça sua pele com técnicas modernas de acupuntura.",
+      image: "https://placehold.co/300",
+    },
+    {
+      id: 11,
+      title: "Terapia com Pedras Quentes",
+      description: "Relaxe profundamente com as propriedades terapêuticas das pedras quentes.",
+      image: "https://placehold.co/300",
+    },
+    {
+      id: 12,
+      title: "Rejuvenescimento Facial",
+      description: "Reduza sinais de idade com tratamentos avançados de rejuvenescimento.",
+      image: "https://placehold.co/300",
+    },
+  ];
+  
