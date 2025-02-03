@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "../components/Layout/Layout";
 import { Home } from "@/pages/Home/Home";
 import Teste from "@/components/Teste";
+import AgendamentoPage from "@/pages/Agendamento/AgendamentoPage";
 
 export function PublicRoutes() {
   return (
@@ -11,6 +12,7 @@ export function PublicRoutes() {
         {/* Conteúdo da página inicial */}
         <Route path="/" element={<Home />} />
         <Route path="/teste" element={<Teste />} />
+        <Route path="/agendamento" element={<AgendamentoPage />} />
       </Route>
     </Routes>
   );

@@ -13,7 +13,7 @@ const AddressStep = ({ onSelect }) => {
 
   return (
     <div className="flex flex-col items-center space-y-6 p-6 w-full max-w-md mx-auto">
-      <h2 className="text-xl font-bold text-gray-800">Escolha o local de atendimento</h2>
+      <h2 className="text-2xl font-bold text-gray-800">Escolha o local de atendimento</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
         {/* Opção Clínica */}
         <Card

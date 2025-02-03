@@ -1,5 +1,6 @@
 import { Button } from "../../../components/ui/button";
 import postagens from '../../../assets/images/postagens.png';
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -22,7 +23,7 @@ const Hero = () => {
         <p className="text-lg md:text-xl text-gray-200 mb-8">
           Realce sua beleza com tratamentos exclusivos e inovadores.
         </p>
-        <Button className="text-lg px-8 py-6">Agendar Agora</Button>
+        <Button className="text-lg px-8 py-6"><Link to={'/agendamento'}>Agendar Agora</Link></Button>
       </div>
     </section>
   );
