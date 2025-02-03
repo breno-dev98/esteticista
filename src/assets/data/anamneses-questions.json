@@ -1,0 +1,218 @@
+{
+    "facial": {
+      "type": "facial",
+      "sections": [
+        {
+          "title": "Dados Pessoais",
+          "fields": [
+            {
+              "id": "nome",
+              "type": "text",
+              "label": "Nome Completo"
+            },
+            {
+              "id": "dataNascimento",
+              "type": "date",
+              "label": "Data de Nascimento"
+            },
+            {
+              "id": "endereco",
+              "type": "text",
+              "label": "Endereço Completo"
+            },
+            {
+              "id": "contatos",
+              "type": "tel",
+              "label": "Telefone/Celular"
+            }
+          ]
+        },
+        {
+          "title": "Histórico de Saúde",
+          "questions": [
+            {
+              "id": "tratamentoAnterior",
+              "type": "boolean",
+              "label": "Fez tratamento estético anterior?",
+              "details": {
+                "showIf": true,
+                "type": "text",
+                "placeholder": "Qual tratamento?"
+              }
+            },
+            {
+              "id": "alergiaMedicamento",
+              "type": "boolean",
+              "label": "Alérgico a algum medicamento?",
+              "details": {
+                "showIf": true,
+                "type": "text",
+                "placeholder": "Qual medicamento?"
+              }
+            },
+            {
+              "id": "usoMedicamento",
+              "type": "boolean",
+              "label": "Está fazendo uso de algum medicamento?",
+              "details": {
+                "showIf": true,
+                "type": "text",
+                "placeholder": "Qual medicamento?"
+              }
+            },
+            {
+              "id": "filtroSolar",
+              "type": "boolean",
+              "label": "Faz uso regular de filtro solar?",
+              "details": {
+                "showIf": true,
+                "type": "text",
+                "placeholder": "Qual fator?"
+              }
+            },
+            {
+              "id": "usoAcido",
+              "type": "boolean",
+              "label": "Faz uso de algum ácido ou peeling químico?"
+            },
+            {
+              "id": "cancerPele",
+              "type": "boolean",
+              "label": "Já teve algum tipo de câncer de pele?"
+            },
+            {
+              "id": "familiaCancerPele",
+              "type": "boolean",
+              "label": "Tem casos de câncer de pele na família?"
+            },
+            {
+              "id": "gestante",
+              "type": "boolean",
+              "label": "Está grávida ou amamentando?"
+            },
+            {
+              "id": "disturbioOcular",
+              "type": "boolean",
+              "label": "Possui algum distúrbio ocular?"
+            }
+          ]
+        }
+      ]
+    },
+    "corporal": {
+      "type": "corporal",
+      "sections": [
+        {
+          "title": "Dados Pessoais",
+          "fields": [
+            {
+              "id": "nome",
+              "type": "text",
+              "label": "Nome Completo"
+            },
+            {
+              "id": "idade",
+              "type": "number",
+              "label": "Idade"
+            },
+            {
+              "id": "email",
+              "type": "email",
+              "label": "E-mail"
+            },
+            {
+              "id": "sexo",
+              "type": "select",
+              "label": "Sexo",
+              "options": ["Feminino", "Masculino", "Prefiro não informar"]
+            },
+            {
+              "id": "dataNascimento",
+              "type": "date",
+              "label": "Data de Nascimento"
+            },
+            {
+              "id": "endereco",
+              "type": "text",
+              "label": "Endereço"
+            },
+            {
+              "id": "telefone",
+              "type": "tel",
+              "label": "Telefone"
+            }
+          ]
+        },
+        {
+          "title": "Histórico de Saúde",
+          "questions": [
+            {
+              "id": "doencasCronicas",
+              "type": "boolean",
+              "label": "Possui doenças crônicas?",
+              "details": {
+                "showIf": true,
+                "type": "text",
+                "placeholder": "Quais doenças?"
+              }
+            },
+            {
+              "id": "alergias",
+              "type": "boolean",
+              "label": "Tem alguma alergia?",
+              "details": {
+                "showIf": true,
+                "type": "text",
+                "placeholder": "Quais alergias?"
+              }
+            },
+            {
+              "id": "tempoSentado",
+              "type": "boolean",
+              "label": "Costuma permanecer muito tempo sentado(a)?"
+            },
+            {
+              "id": "horasSono",
+              "type": "boolean",
+              "label": "Dorme de 6-8 horas por dia?"
+            },
+            {
+              "id": "dietaAlimentar",
+              "type": "boolean",
+              "label": "Fez ou faz alguma dieta alimentar?"
+            },
+            {
+              "id": "cozinhaRefeicoes",
+              "type": "boolean",
+              "label": "Costuma cozinhar as próprias refeições?"
+            },
+            {
+              "id": "funcionamentoIntestino",
+              "type": "boolean",
+              "label": "Tem funcionamento regular do intestino?"
+            },
+            {
+              "id": "atividadeFisica",
+              "type": "boolean",
+              "label": "Pratica alguma atividade física?"
+            },
+            {
+              "id": "alimentacaoBalanceada",
+              "type": "boolean",
+              "label": "Possui uma alimentação balanceada?"
+            },
+            {
+              "id": "hidratacao",
+              "type": "boolean",
+              "label": "Ingere líquidos com frequência?"
+            },
+            {
+              "id": "gestante",
+              "type": "boolean",
+              "label": "É gestante?"
+            }
+          ]
+        }
+      ]
+    }
+  }
