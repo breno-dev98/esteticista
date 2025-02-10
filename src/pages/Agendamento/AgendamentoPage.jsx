@@ -1,27 +1,81 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import AddressStep from "@/components/Agendamento/Etapas/AddressStep";
 import CategoryStep from "@/components/Agendamento/Etapas/CategoryStep";
-import DateTimeStep from "@/components/Agendamento/Etapas/DateTimeStep";
+import ServicesStep from "@/components/Agendamento/Etapas/ServicesStep";
+import DateTimeStep from "@/components/Agendamento/Etapas/DateTimeStep"; // Etapa de data e hora
+import { Button } from "@/components/ui/button";
 
 const PaginatedForm = () => {
-  const [currentStep, setCurrentStep] = useState(0); // Etapa inicial
-  const [selectedAddress, setSelectedAddress] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [selectedDateTime, setSelectedDateTime] = useState(null);
+  const [formData, setFormData] = useState({
+    address: null,
+    category: null,
+    dateTime: null,
+    services: [],
+  });
+
+  const handleSelectAddress = (address) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      address,
+    }));
+  };
+
+  const handleSelectCategory = (category) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      category,
+    }));
+  };
+
+  const handleSelectDateTime = (dateTime) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      dateTime,
+    }));
+  };
+
+  const handleSelectService = (service) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      services: [...prevData.services, service],
+    }));
+  };
+
+  const [currentStep, setCurrentStep] = useState(0);
 
   const steps = [
     {
-      component: <AddressStep onSelect={setSelectedAddress} />,
-      isValid: selectedAddress !== null, // Verificação da validade do estado
+      component: <AddressStep onSelect={handleSelectAddress} />,
+      isValid: formData.address !== null,
     },
     {
-      component: <CategoryStep onSelect={setSelectedCategory} />,
-      isValid: selectedCategory !== null, // Verificação da validade do estado
+      component: <CategoryStep onSelect={handleSelectCategory} />,
+      isValid: formData.category !== null,
     },
     {
-      component: <DateTimeStep onSelect={setSelectedDateTime}/>,
-      isValid: selectedDateTime !== null, // Última etapa sempre válida
+      component: <ServicesStep onSelect={handleSelectService} selectedCategory={formData.category} />,
+      isValid: formData.services.length > 0,
+    },
+    {
+      component: <DateTimeStep onSelect={handleSelectDateTime} />,
+      isValid: formData.dateTime !== null,
+    },
+    {
+      component: (
+        <div>
+          <h2>Resumo do Agendamento</h2>
+          <p><strong>Endereço:</strong> {formData.address}</p>
+          <p><strong>Categoria:</strong> {formData.category}</p>
+          <p><strong>Data e Hora:</strong> {formData.dateTime}</p>
+          <p><strong>Serviços Selecionados:</strong></p>
+          <ul>
+            {formData.services.map((service, index) => (
+              <li key={index}>{service.title}</li>
+            ))}
+          </ul>
+        </div>
+      ),
+      isValid: true,
     },
   ];
 
@@ -39,7 +93,6 @@ const PaginatedForm = () => {
 
   return (
     <div className="flex flex-col items-center p-4 mt-20 w-full min-h-screen">
-
       <div className="w-full">{steps[currentStep].component}</div>
 
       <div className="flex justify-between mt-6 w-fit">
@@ -53,7 +106,7 @@ const PaginatedForm = () => {
         </Button>
         <Button
           onClick={handleNext}
-          disabled={!steps[currentStep].isValid} // Desabilita o botão "Avançar" se o estado da etapa for inválido
+          disabled={!steps[currentStep].isValid}
           className="ml-2"
         >
           Avançar
