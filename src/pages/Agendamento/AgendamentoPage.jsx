@@ -4,6 +4,7 @@ import CategoryStep from "@/components/Agendamento/Etapas/CategoryStep";
 import ServicesStep from "@/components/Agendamento/Etapas/ServicesStep";
 import DateTimeStep from "@/components/Agendamento/Etapas/DateTimeStep"; // Etapa de data e hora
 import { Button } from "@/components/ui/button";
+import SummaryStep from "@/components/Agendamento/Etapas/SummaryStep";
 
 const PaginatedForm = () => {
   const [formData, setFormData] = useState({
@@ -53,7 +54,12 @@ const PaginatedForm = () => {
       isValid: formData.category !== null,
     },
     {
-      component: <ServicesStep onSelect={handleSelectService} selectedCategory={formData.category} />,
+      component: (
+        <ServicesStep
+          onSelect={handleSelectService}
+          selectedCategory={formData.category}
+        />
+      ),
       isValid: formData.services.length > 0,
     },
     {
@@ -62,18 +68,7 @@ const PaginatedForm = () => {
     },
     {
       component: (
-        <div>
-          <h2>Resumo do Agendamento</h2>
-          <p><strong>Endereço:</strong> {formData.address}</p>
-          <p><strong>Categoria:</strong> {formData.category}</p>
-          <p><strong>Data e Hora:</strong> {formData.dateTime}</p>
-          <p><strong>Serviços Selecionados:</strong></p>
-          <ul>
-            {formData.services.map((service, index) => (
-              <li key={index}>{service.title}</li>
-            ))}
-          </ul>
-        </div>
+        <SummaryStep formData={formData} />
       ),
       isValid: true,
     },

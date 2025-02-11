@@ -19,11 +19,11 @@ const AddressStep = ({ onSelect }) => {
         <Card
           className={cn(
             "flex flex-col items-center justify-center p-6 border rounded-lg cursor-pointer transition-all duration-300",
-            selected === "clinica" ? "border-primary bg-primary/10 shadow-lg" : "hover:shadow-md"
+            selected === "Clínica" ? "border-primary bg-primary/10 shadow-lg" : "hover:shadow-md"
           )}
-          onClick={() => handleSelect("clinica")}
+          onClick={() => handleSelect("Clínica")}
         >
-          <Building2 className="w-12 h-12 text-primary" />
+          <Building2 className="w-12 h-12 md:w-32 md:h-32 text-primary" />
           <span className="mt-3 font-medium text-gray-700">Na Clínica</span>
         </Card>
 
@@ -31,11 +31,11 @@ const AddressStep = ({ onSelect }) => {
         <Card
           className={cn(
             "flex flex-col items-center justify-center p-6 border rounded-lg cursor-pointer transition-all duration-300",
-            selected === "domiciliar" ? "border-primary bg-primary/10 shadow-lg" : "hover:shadow-md"
+            selected === "Domiciliar" ? "border-primary bg-primary/10 shadow-lg" : "hover:shadow-md"
           )}
-          onClick={() => handleSelect("domiciliar")}
+          onClick={() => handleSelect("Domiciliar")}
         >
-          <Home className="w-12 h-12 text-primary" />
+          <Home className="w-12 h-12 md:w-32 md:h-32 text-primary" />
           <span className="mt-3 font-medium text-gray-700">Domiciliar</span>
         </Card>
       </div>

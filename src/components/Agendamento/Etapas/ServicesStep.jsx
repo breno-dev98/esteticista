@@ -1,4 +1,5 @@
 import CustomCard from "@/components/UI-Components/CustomCard";
+import CustomCarousel from "@/components/UI-Components/CustomCarousel";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -8,13 +9,13 @@ const ServicesStep = ({ selectedCategory, onSelect }) => {
 
   const getServices = async () => {
     try {
-      setLoading(false);
+      setLoading(true);
       const res = await axios.get("http://localhost:3000/api/servicos");
       setServices(res.data);
     } catch (error) {
       console.error("Erro ao buscar serviços", error);
     } finally {
-      setLoading(true);
+      setLoading(false);
     }
   };
 
@@ -31,32 +32,23 @@ const ServicesStep = ({ selectedCategory, onSelect }) => {
   });
 
   return (
-    <div className="my-20">
-      <div className="flex flex-wrap justify-center gap-6">
-        {!loading ? (
-          <p className="text-primary font-bold text-2xl">Carregando...</p>
-        ) : (
-          <>
-            {filteredServices.map((service) => (
-              <div
-                className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5"
-                key={service.id}
-              >
-                <CustomCard
-                  title={service.title}
-                  description={service.description}
-                  image={service.image}
-                  duration={service.duration + " min"}
-                  price={"R$" + service.price}
-                  buttonText={"Adicionar Serviço"}
-                  icon={true}
-                  onClick={() => onSelect(service)} // Chama o callback onSelect para atualizar os serviços selecionados
-                />
-              </div>
-            ))}
-          </>
-        )}
-      </div>
+    <div className="my-5">
+      {loading ? (
+        <p className="text-primary font-bold text-2xl text-center">Carregando...</p>
+      ) : (
+        <CustomCarousel
+          items={filteredServices.map((service) => ({
+            title: service.title,
+            description: service.description,
+            image: service.image,
+            duration: service.duration ? `${service.duration} min` : null,
+            price: service.price ? `R$ ${service.price}` : null,
+            buttonText: "Adicionar Serviço",
+            icon: true,
+            onClick: () => onSelect(service),
+          }))}
+        />
+      )}
     </div>
   );
 };
