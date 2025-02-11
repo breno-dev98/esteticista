@@ -1,5 +1,5 @@
 import CustomCarousel from "../../../components/UI-Components/CustomCarousel"; // Ajuste o caminho conforme necessário
-import { services } from "@/assets/data/servicesData";
+import { services } from "@/assets/data/servicesData.json";
 
 const ServicesSection = () => {
   return (
